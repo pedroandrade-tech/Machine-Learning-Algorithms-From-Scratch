@@ -68,10 +68,9 @@ Where:
 
 The model shows high recall but low precision for the positive class (CHD risk). This is expected given:
 1. Highly imbalanced dataset (~15% positive cases)
-2. Conservative threshold (0.5) favoring false positives over false negatives
-3. Medical prediction task where missing true positives is costly
+2. Medical prediction task where missing true positives is costly
 
-The relatively low accuracy reflects the challenge of predicting cardiovascular risk from limited features and class imbalance. Production models would require class balancing techniques (SMOTE, weighted loss) and threshold optimization.
+The relatively low accuracy reflects the challenge of predicting cardiovascular risk from limited features and class imbalance. 
 
 ## Key Features
 
@@ -96,7 +95,7 @@ w, b, J_history, w_history = gradient_descent(
     compute_cost,
     compute_gradient,
     alpha=0.001,        # learning rate
-    num_iters=10000,    # iterations
+    num_iters=1000,    # iterations
     lambda_=0           # regularization
 )
 
@@ -121,7 +120,6 @@ This implementation prioritizes **clarity and understanding** over production-re
 - Gradient descent optimization from first principles
 - Binary classification fundamentals
 
-For production use, consider scikit-learn's optimized `LogisticRegression` with additional features like automatic regularization tuning, multi-class support, and solver options.
 
 ## License
 
